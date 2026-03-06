@@ -1,0 +1,9 @@
+[Unit]
+Description=Little timed test-script every 10sec
+
+[Service]
+Type=simple
+ExecStart=/home/k8s/scripts/script.sh
+
+[Install]
+WantedBy=multi-user.target
