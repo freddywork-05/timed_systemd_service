@@ -1,4 +1,6 @@
-Repo zum Einrichten eines zeitbasierten Systemd-Services.
+Repo zum Einrichten eines zeitbasierten Systemd-Services. <br>
+
+Um zu wechseln zwischen main (Test-Skript) und systemd - Setup, kann oben links, wo standardmäßig main steht, eine der beiden Optionen ausgewählt werden.
 
 Main: https://github.com/freddywork-05/timed_systemd_service/tree/main <br>
 Systemd: https://github.com/freddywork-05/timed_systemd_service/tree/systemd <br>
