@@ -2,10 +2,26 @@
 Description=Timer zum Script (10sek)
 
 [Timer]
+# Zeitangaben: usec, msec, seconds, minutes, hours, days, weeks, months, years
+
+# Wartezeit nach Bootvorgang
 OnBootSec=2min
-OnUnitActiveSec=10s
+# Timer in Zeitangabe nach Aktivierung des Services
+#OnUnitActiveSec=10s
 # Erhöht die Genauigkeit von standardmäßig 1min auf 1 Sekunde
-AccuracySec=1s
+# nur nötig bei Sekundengenauer Ausführung
+#AccuracySec=1s
+
+# --- ODER ---
+# Es ist möglich auch Timer kalenderbasiert (Tag, Stunde, Minute) einzurichten
+# Syntax: OnCalendar=[DayOfWeek] [Year-Month-Day] [Hour:Minute:Second] 
+# DayOfWeek: Angabe von Zeiträumen (Mon..Fri) und meheren Tagen (Mon,Wed,Fri) möglich
+# Tage: Sun, Mon, Tue, Wed, Thu, Fri, Sat
+# * für JEDE möglich
+
+OnCalendar=Mon..Fri *-*-* *:*:15,30,45,00
+
+# .service Datei (zu startender Systemd-Service)
 Unit=script.service
 
 [Install]
